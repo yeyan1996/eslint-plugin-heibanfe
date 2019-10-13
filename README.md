@@ -1,6 +1,6 @@
 # eslint-plugin-heibanfe
 
-check setTimeout with illegal argument
+晓信前端 eslint 插件扩展包
 
 ## Installation
 
@@ -43,7 +43,8 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-* Fill in provided rules here
+* no-static-method
+* no-fuzzy-setTimeout
 
 
 
