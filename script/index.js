@@ -1,6 +1,5 @@
 const inquirer = require('inquirer')
 const {execSync} = require("child_process")
-const task = tasks => tasks.join("&&")
 
 inquirer.prompt([
     {
@@ -14,4 +13,4 @@ inquirer.prompt([
     execSync(
         `npm version ${version.type} && npm publish`
     )
-}).catch(e=> console.log(e))
+}).catch()
