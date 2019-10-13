@@ -20,6 +20,11 @@
     "inquirer": "^7.0.0",
     "mocha": "^6.2.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  },
   "engines": {
     "node": ">=0.10.0"
   },

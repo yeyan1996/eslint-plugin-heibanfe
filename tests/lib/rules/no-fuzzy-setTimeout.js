@@ -9,20 +9,9 @@
 //------------------------------------------------------------------------------
 
 const rule = require("../../../lib/rules/no-fuzzy-setTimeout")
-const RuleTester = require("eslint").RuleTester;
+const tester = require("../index")
 
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
-
-const ruleTester = new RuleTester({
-    parserOptions: {
-        ecmaVersion: 10,
-    },
-});
-
-ruleTester.run("no-fuzzy-setTimeout", rule, {
+tester.run("no-fuzzy-setTimeout", rule, {
 
     valid: [
         "setTimeout(()=>{},X)",
