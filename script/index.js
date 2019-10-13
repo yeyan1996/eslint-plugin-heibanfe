@@ -6,7 +6,7 @@ inquirer.prompt([
     {
         type: 'list',
         name: 'type',
-        choices:['patch','major','minor'],
+        choices:['patch','minor','major'],
         message: 'which type does this update belongs to?',
         default: 'patch'
     }
@@ -17,4 +17,4 @@ inquirer.prompt([
             `npm publish`,
         ])
     )
-})
+}).catch(e=> console.log(e))
