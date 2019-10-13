@@ -5,12 +5,12 @@ const task = tasks => tasks.join("&&")
 inquirer.prompt([
     {
         type: 'list',
-        name: 'version',
+        name: 'type',
         choices:['patch','major','minor'],
         message: 'which type does this update belongs to?',
         default: 'patch'
     }
-]).then((version) => {
+]).then(version => {
     execSync(
         task([
             `npm version ${version.type}`,
