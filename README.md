@@ -16,11 +16,11 @@ Next, install `eslint-plugin-heibanfe`:
 $ npm install eslint-plugin-heibanfe --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-yeyan1996` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-heibanfe` globally.
 
 ## Usage
 
-Add `yeyan1996` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `heibanfe` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
