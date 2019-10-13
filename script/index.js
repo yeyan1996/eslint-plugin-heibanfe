@@ -13,4 +13,4 @@ inquirer.prompt([
     execSync(
         `npm version ${version.type} && npm publish`
     )
-}).catch()
+}).catch(e=>e)
