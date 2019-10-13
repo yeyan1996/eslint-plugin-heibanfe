@@ -12,9 +12,6 @@ inquirer.prompt([
     }
 ]).then(version => {
     execSync(
-        task([
-            `npm version ${version.type}`,
-            `npm publish`,
-        ])
+        `npm version ${version.type} && npm publish`
     )
 }).catch(e=> console.log(e))
