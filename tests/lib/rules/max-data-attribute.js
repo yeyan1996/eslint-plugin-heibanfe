@@ -64,6 +64,29 @@ tester.run('max-data-attribute', rule, {
     },
     {
       filename: 'test.vue',
+      code: `
+          export default {
+            data:()=> {
+              return {
+                msg: 1,
+                msg2: 1,
+                msg3: 1,
+                msg4: 1,
+                msg5: 1,
+                msg6: 1,
+                msg7: 1,
+                msg8: 1,
+                msg9: 1
+              }
+            },
+          }
+      `,
+      errors: [{
+        message: 'data 根属性的数量最大为 8 个',
+      }],
+    },
+    {
+      filename: 'test.vue',
       options: [5],
       code: `
         export default {
