@@ -36,6 +36,14 @@ tester.run('max-data-attribute', rule, {
         }
       `,
     },
+    {
+      filename: 'test.vue',
+      code: `
+        export default {
+          data:{}
+        }
+      `,
+    },
   ],
 
   invalid: [
