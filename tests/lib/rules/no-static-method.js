@@ -1,33 +1,32 @@
-"use strict";
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../../lib/rules/no-static-method")
-const tester = require("../index")
+const rule = require('../../../lib/rules/no-static-method');
+const tester = require('../index');
 
 
-tester.run("no-static-method", rule, {
+tester.run('no-static-method', rule, {
 
-    valid: [],
+  valid: [],
 
-    invalid: [
-        {
-            code: "Vue.router = {}",
-            errors: [{
-                message: "禁止给Vue添加静态方法",
-                type: "AssignmentExpression"
-            }]
-        },
+  invalid: [
+    {
+      code: 'Vue.router = {}',
+      errors: [{
+        message: '禁止给Vue添加静态方法',
+        type: 'AssignmentExpression',
+      }],
+    },
 
-        {
-            code: "Vue.store = {}",
-            errors: [{
-                message: "禁止给Vue添加静态方法",
-                type: "AssignmentExpression"
-            }]
-        },
+    {
+      code: 'Vue.store = {}',
+      errors: [{
+        message: '禁止给Vue添加静态方法',
+        type: 'AssignmentExpression',
+      }],
+    },
 
-    ]
+  ],
 });

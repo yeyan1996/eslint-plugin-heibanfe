@@ -9,20 +9,24 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive",
-    "publish": "node script/index"
+    "publish": "node script/index",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
-    "requireindex": "~1.1.0"
+    "eslint-plugin-vue": "^5.2.3",
+    "requireindex": "~1.1.0",
+    "inquirer": "^7.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.9",
-    "inquirer": "^7.0.0",
     "mocha": "^6.2.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "npm run test && npm run lint"
     }
   },
   "engines": {
