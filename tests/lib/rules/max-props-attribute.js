@@ -27,6 +27,14 @@ tester.run('max-props-attribute', rule, {
       filename: 'test.vue',
       code: `
         export default {
+          props:["a","b"]
+        }
+      `,
+    },
+    {
+      filename: 'test.vue',
+      code: `
+        export default {
           props:123
         }
       `,
@@ -54,6 +62,17 @@ tester.run('max-props-attribute', rule, {
     },
     {
       filename: 'test.vue',
+      code: `
+        export default {
+         props:["a","b","c","d","e","f"]
+        }
+      `,
+      errors: [{
+        message: 'props 根属性的数量最大为 5 个',
+      }],
+    },
+    {
+      filename: 'test.vue',
       options: [3],
       code: `
         export default {
@@ -65,6 +84,18 @@ tester.run('max-props-attribute', rule, {
             e:5,
             f:6
           }
+        }
+      `,
+      errors: [{
+        message: 'props 根属性的数量最大为 3 个',
+      }],
+    },
+    {
+      filename: 'test.vue',
+      options: [3],
+      code: `
+         export default {
+         props:["a","b","c","d","e","f"]
         }
       `,
       errors: [{
