@@ -19,6 +19,17 @@ tester.run("same-filename-componentName", rule, {
       `
     },
     {
+      filename: "parent/test1.vue",
+      code: `
+        export default {
+          name:"test1",
+          props:{
+            a:1
+          }
+        }
+      `
+    },
+    {
       filename: "test.vue",
       code: `
         export default {
