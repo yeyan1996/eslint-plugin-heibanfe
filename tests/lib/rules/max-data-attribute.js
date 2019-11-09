@@ -7,14 +7,13 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require('../../../lib/rules/max-data-attribute');
-const tester = require('../index');
+const rule = require("../../../lib/rules/max-data-attribute");
+const tester = require("../index");
 
-tester.run('max-data-attribute', rule, {
-
+tester.run("max-data-attribute", rule, {
   valid: [
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       code: `
         export default {
           data () {
@@ -23,31 +22,31 @@ tester.run('max-data-attribute', rule, {
             }
           },
         }
-      `,
+      `
     },
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       code: `
         export default {
           data:()=>({
               msg: 'Welcome to Your Vue.js App'
           })
         }
-      `,
+      `
     },
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       code: `
         export default {
           data:{}
         }
-      `,
-    },
+      `
+    }
   ],
 
   invalid: [
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       code: `
         export default {
           data () {
@@ -65,12 +64,14 @@ tester.run('max-data-attribute', rule, {
           },
         }
       `,
-      errors: [{
-        message: 'data 根属性的数量最大为 8 个',
-      }],
+      errors: [
+        {
+          message: "data 根属性的数量最大为 8 个"
+        }
+      ]
     },
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       code: `
           export default {
             data:function() {
@@ -88,12 +89,14 @@ tester.run('max-data-attribute', rule, {
             },
           }
       `,
-      errors: [{
-        message: 'data 根属性的数量最大为 8 个',
-      }],
+      errors: [
+        {
+          message: "data 根属性的数量最大为 8 个"
+        }
+      ]
     },
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       code: `
           export default {
             data:()=> {
@@ -111,13 +114,15 @@ tester.run('max-data-attribute', rule, {
             },
           }
       `,
-      errors: [{
-        message: 'data 根属性的数量最大为 8 个',
-      }],
+      errors: [
+        {
+          message: "data 根属性的数量最大为 8 个"
+        }
+      ]
     },
 
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       options: [5],
       code: `
         export default {
@@ -137,12 +142,14 @@ tester.run('max-data-attribute', rule, {
           },
         }
       `,
-      errors: [{
-        message: 'data 根属性的数量最大为 5 个',
-      }],
+      errors: [
+        {
+          message: "data 根属性的数量最大为 5 个"
+        }
+      ]
     },
     {
-      filename: 'test.vue',
+      filename: "test.vue",
       options: [5],
       code: `
         export default {
@@ -161,9 +168,11 @@ tester.run('max-data-attribute', rule, {
           },
         }
       `,
-      errors: [{
-        message: 'data 根属性的数量最大为 5 个',
-      }],
-    },
-  ],
+      errors: [
+        {
+          message: "data 根属性的数量最大为 5 个"
+        }
+      ]
+    }
+  ]
 });
