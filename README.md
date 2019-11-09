@@ -47,6 +47,7 @@ Then configure the rules you want to use under the rules section.
 * no-fuzzy-setTimeout
 * max-data-attribute
 * max-props-attribute
+* same-filename-componentName
 
 
 
